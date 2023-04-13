@@ -101,7 +101,6 @@ def getData():
             #gets essential data from each json object/tweet
             current = data['rawContent']
             #print(d)
-            time.sleep(1)
             textContent.append(current)#adds data to list to be referred to later      
             allTweets.append(d)
     f.close()

@@ -63,7 +63,7 @@ def next():
 def clause():
     if request.method == "POST":
         username = request.form.get("uname")
-        #main(username)
+        main(username)
         return render_template('clause.html')
 
 @app.route('/proceed') #displays results

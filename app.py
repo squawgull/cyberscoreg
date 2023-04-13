@@ -216,8 +216,7 @@ def clean():
     if choice == 2:
         os.system("rm userChoice.txt")
 
-def main(uname):
-    inp = uname
+def main(inp):
     scrape(inp)
     getData()
     openDoc(choice)

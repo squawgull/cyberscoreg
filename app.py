@@ -63,7 +63,7 @@ def next():
 def clause():
     if request.method == "POST":
         username = request.form.get("uname")
-        main()
+        main(username)
         return render_template('clause.html')
 
 @app.route('/proceed') #displays results
@@ -76,10 +76,10 @@ if __name__ == '__main__':
 
 #procedures needed
 
-def scrape(username):
+def scrape():
     command1 = "snscrape --jsonl --max-results 10000 twitter-search 'from:"
     command2 = "'> posts.json"
-    allCommand = command1 + username + command2
+    allCommand = command1 + uname + command2
     print(allCommand)
     os.system(allCommand)
 
@@ -217,8 +217,8 @@ def clean():
     if choice == 2:
         os.system("rm userChoice.txt")
 
-def main():
-    scrape(username)
+def main(uname):
+    scrape()
     getData()
     openDoc(choice)
     processedData = removeLinks(textContent)

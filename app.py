@@ -68,7 +68,6 @@ def clause():
 
 @app.route('/proceed') #displays results
 def proceed():
-        main()
         return render_template('proceed.html')
 
 if __name__ == '__main__':
@@ -79,7 +78,7 @@ if __name__ == '__main__':
 def scrape():
     command1 = "snscrape --jsonl --max-results 10000 twitter-search 'from:"
     command2 = "'> posts.json"
-    allCommand = command1 + uname + command2
+    allCommand = command1 + inp + command2
     print(allCommand)
     os.system(allCommand)
 
@@ -218,6 +217,7 @@ def clean():
         os.system("rm userChoice.txt")
 
 def main(uname):
+    inp = uname
     scrape()
     getData()
     openDoc(choice)

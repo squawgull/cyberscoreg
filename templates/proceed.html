@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Results: My Cyber Score</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    </head>
+    <body>
+        <h1>Your results</h1>
+        <br>
+        <p>Your score generated is: {{ score }}</p>
+        <br>
+        <p>Your flagged posts include:</p>
+		<ul>
+		{% for i in range(0, len) %}
+		
+			<li>{{flaggedPosts[i]['rawContent']}}</li>
+			<li>{{flaggedPosts[i]['url']}}</li>
+			
+		{% endfor %}
+		</ul>
+    </body>
+</html>

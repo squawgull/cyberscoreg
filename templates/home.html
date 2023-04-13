@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HomePage: My Cyber Score</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+
+<body>
+    <h1>Welcome to CyberScore! Take charge of your digital footprint</h1>
+    <br>
+    <p>Your identity is your most important asset, protect it. </p>
+    <br>
+    <p>CyberScore enables users to check their social media either for personal information in their posts, or for profanities and offensive terms.</p>
+    <br>
+    <p>We'll then return your flagged posts to review and a score to see how you compare.</p>
+    <br>
+    <p>Our process:</p>
+    <p>1. Select your type of check (Workplace or Security).</p>
+    <p>2. Login in with your Twitter or Reddit Account.</p>
+    <p>3. Review your flagged posts.</p>
+    <br>
+    <ul>
+        <li><a href="{{ url_for('select') }}">Proceed</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Enter Text: CyberScore</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    </head>
+    <body>
+        <h1>Input your information</h1>
+        <br>
+        <p>Please input the personal information you wish CyberScore to locate. Format your information with just spaces between key words.</p>
+        <p>example: london smith john jones lloyds
+		<br>
+		<p>Examples of personal information you could look for: last name, workplace name, hometown/city, mother's maiden name etc. Add as much or as little as you please.</p>
+		<form action="{{ url_for('next') }}" method="post">
+			<textarea name="textInput" rows="5" cols="60"></textarea>
+			<input type="submit">
+		</form>
+    </body> 
+</html>

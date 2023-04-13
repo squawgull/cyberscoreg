@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Select Check: CyberScore</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    </head>
+    <body>
+        <h1>Select your check:</h1>
+        <br>
+		<ul>
+			<li><a href="{{ url_for('login') }}">Workplace</a></li>
+			<li><a href="{{ url_for('getText') }}">Security</a></li>
+		</ul>
+    </body>
+</html>

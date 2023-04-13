@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Our conditions: CyberScore</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    </head>
+    <body>
+        <h1>Our terms and conditions:</h1>
+        <br>
+        <p>At CyberScore, we will not share or store your data.</p>
+        <ul>How we handle your data:
+            <li>Once you have logged in with your account and the analysis has occured; we will not store your account information in a database.</li>
+            <li>This means that after your score and flagged posts have been returned, all data scraped from your account is deleted and the results produced are not stored. </li>
+            <li>The source code for this program is a Python script which does not utilise a database or write any user data permanently to the system.</li>
+            <li>If you have given us any personal information for a check, this file is deleted after it has been used and therefore will not be stored in our system.</li>
+            <li>Any personal information collected for this process has been provided with your full knowledge and consent that you have provided willingly.</li>
+            <li>All data used collected in the process is necessary for producing a result.</li>
+        </ul>
+        <ul>What data we collect:
+            <li>Your username for your social media account.</li>
+            <li>All public posts made on your social media account.</li>
+            <li>Any personal or identifying information you have provided for a security check.</li>
+        </ul>
+        <p>If you are comfortable with how we process your data, press "I Agree" to proceed.</p>
+		<br>
+		<ul>
+			<li><a href="{{ url_for('proceed') }}">I agree</a></li>
+		</ul>
+    </body>
+</html>

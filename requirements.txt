@@ -54,7 +54,6 @@ sortedcontainers==2.4.0
 soupsieve==2.3.2.post1
 trio==0.22.0
 trio-websocket==0.9.2
-twint==2.1.21
 urllib3==1.26.14
 Werkzeug==2.2.3
 wsproto==1.2.0

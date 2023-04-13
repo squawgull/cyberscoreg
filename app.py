@@ -75,10 +75,10 @@ if __name__ == '__main__':
 
 #procedures needed
 
-def scrape():
+def scrape(username):
     command1 = "snscrape --jsonl --max-results 10000 twitter-search 'from:"
     command2 = "'> posts.json"
-    allCommand = command1 + inp + command2
+    allCommand = command1 + username + command2
     print(allCommand)
     os.system(allCommand)
 
@@ -218,7 +218,7 @@ def clean():
 
 def main(uname):
     inp = uname
-    scrape()
+    scrape(inp)
     getData()
     openDoc(choice)
     processedData = removeLinks(textContent)

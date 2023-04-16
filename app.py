@@ -75,6 +75,7 @@ def proceed():
     return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts)
  
 if final:
+    print("Final has been called")
     sys.exit()
 
 if __name__ == '__main__':

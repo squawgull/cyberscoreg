@@ -78,7 +78,7 @@ if __name__ == '__main__':
 #procedures needed
 
 def scrape(username):
-    command1 = "snscrape --jsonl --max-results 100 twitter-search 'from:"
+    command1 = "snscrape --jsonl --max-results 10000 twitter-search 'from:"
     command2 = "'> posts.json"
     allCommand = command1 + username + command2
     print(allCommand)
@@ -234,6 +234,7 @@ def main(inp):
     
     display()
     
+    print(userScore)
     print(flaggedPosts)
     print(termsFound)
     

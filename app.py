@@ -233,4 +233,8 @@ def main(inp):
     locate(processedData)
     
     display()
+    
+    print(flaggedPosts)
+    print(termsFound)
+    
     clean()

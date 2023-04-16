@@ -241,5 +241,8 @@ def main(inp):
     userScore = calculate(bowRep)
     locate(processedData)
     
-    display()   
+    display()
+    
+    print(terms)
+    
     clean()

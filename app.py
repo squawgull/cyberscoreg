@@ -80,6 +80,7 @@ if __name__ == '__main__':
 
 def shut():
     time.sleep(1)
+    print("Shutting down")
     sys.exit()
 
 def scrape(username):

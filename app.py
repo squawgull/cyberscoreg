@@ -7,10 +7,10 @@ import time
 import re
 
 import nltk
-#nltk.download('stopwords')
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 stop = set(stopwords.words('english'))
-#nltk.download('punkt')
+nltk.download('punkt')
 from nltk.tokenize import word_tokenize
 
 from flask import Flask, render_template, request, redirect, url_for

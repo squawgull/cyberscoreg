@@ -60,7 +60,7 @@ def next():
     if request.method == "POST":
         text = request.form.get("textInput")
         f = open("userChoice.txt", "w")
-        f.write(text)
+        f.write(text + "\n")
         f.close()
         return render_template('login.html')
 

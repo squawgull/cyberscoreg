@@ -116,7 +116,6 @@ def getData():
     f.close()
 
 def openDoc(choice): #open the correct set of terms
-    global choice
     if choice == 1:
         f = open("profanities.txt", "r").read().split('\n')
     if choice == 2:

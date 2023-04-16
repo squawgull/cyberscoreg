@@ -71,17 +71,16 @@ def clause():
 
 @app.route('/proceed') #displays results
 def proceed():
-    final = True
-    return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts)
+    return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts), shut()
  
 if __name__ == '__main__':
-    if final == True:
-        print("Process is terminating")
-        sys.exit()
     app.run(debug=True, host='0.0.0.0', port=5000)
 
-
 #procedures needed
+
+def shut():
+    time.sleep(1)
+    sys.exit()
 
 def scrape(username):
     command1 = "snscrape --jsonl --max-results 1000 twitter-search 'from:"

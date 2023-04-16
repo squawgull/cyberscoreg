@@ -59,8 +59,11 @@ def getText():
 def next():
     if request.method == "POST":
         text = request.form.get("textInput")
+        spr = text.split()
+        print(spr)
         f = open("userChoice.txt", "w")
-        f.write(text + "\n")
+        for a in spr:
+            f.write(a + "\n")
         f.close()
         return render_template('login.html')
 

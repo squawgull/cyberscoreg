@@ -243,6 +243,8 @@ def main(inp):
     
     display()
     
+    #print
+    
     print(terms)
     
     clean()

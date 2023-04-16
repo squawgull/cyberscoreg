@@ -228,6 +228,7 @@ def main(inp):
     processedData = tokeniseIt(processedData)
 
     bowRep = bowUse(processedData)
+    global userScore
     userScore = calculate(bowRep)
     locate(processedData)
     

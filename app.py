@@ -27,7 +27,7 @@ flaggedPosts = [] #flagged posts are stored in here
 username = "default"
 choice = 1
 anythingFound = True
-#userScore = 0
+userScore = 0
 
 #flask code
 
@@ -64,7 +64,7 @@ def next():
 def clause():
     if request.method == "POST":
         username = request.form.get("uname")
-        new = main(username)
+        main(username)
         return render_template('clause.html')
 
 @app.route('/proceed') #displays results
@@ -238,5 +238,3 @@ def main(inp):
     print(termsFound)
     
     clean()
-    
-    return userScore

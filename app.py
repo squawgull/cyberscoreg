@@ -44,12 +44,12 @@ def select():
 
 @app.route('/login', methods=['GET', 'POST']) #gets login
 def login():
-    choice = 1
+    global choice = 1
     return render_template("login.html")
 
 @app.route('/promptText', methods=['GET', 'POST']) #get text input
 def getText():
-    choice = 2
+    global choice = 2
     return render_template('getText.html')
 
 @app.route('/next', methods=['GET', 'POST']) #alternate login page
@@ -64,7 +64,7 @@ def next():
 @app.route('/clause', methods=['GET', 'POST']) #displays consent clause
 def clause():
     if request.method == "POST":
-        username = request.form.get("uname")
+        global username = request.form.get("uname")
         main(username)
         return render_template('clause.html')
 

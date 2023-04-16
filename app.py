@@ -47,12 +47,14 @@ def select():
 def login():
     global choice
     choice = 1
+    print("workplace check selected")
     return render_template("login.html")
 
 @app.route('/promptText', methods=['GET', 'POST']) #get text input
 def getText():
     global choice
     choice = 2
+    print("security check selected")
     return render_template('getText.html')
 
 @app.route('/next', methods=['GET', 'POST']) #alternate login page

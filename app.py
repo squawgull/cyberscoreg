@@ -15,7 +15,6 @@ from nltk.tokenize import word_tokenize
 
 from flask import Flask, render_template, request, redirect, url_for
 
-
 #global lists
 
 allTweets = [] #stores all of the relevant fields for each post here
@@ -175,16 +174,18 @@ def bowUse(posts): #bag of words representation of the document
     return bow
 
 def calculate(model): #spits out a score based on how many profanities found
+    score = 0
     for key in model: #needs to iterate through bow
         if (key in terms) and (model[key] == 1): #if that item is in terms then...
-            userScore += 1
+            score += 1
             termsFound.append(key)
         elif (key in terms) and (model[key] == 2):
-            userScore += 1.5
+            score += 1.5
             termsFound.append(key)
         elif (key in terms) and (model[key] >= 3):
-            userScore += 2
+            score += 2
             termsFound.append(key)
+    return score
 
 def locate(posts): #find the posts with the offensive terms
     count = 0
@@ -227,7 +228,7 @@ def main(inp):
     processedData = tokeniseIt(processedData)
 
     bowRep = bowUse(processedData)
-    calculate(bowRep)
+    userScore = calculate(bowRep)
     locate(processedData)
     
     display()

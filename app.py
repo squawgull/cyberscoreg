@@ -75,10 +75,11 @@ def proceed():
     return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts)
  
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
     if final == True:
         print("Process is terminating")
         sys.exit()
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
 
 #procedures needed
 

@@ -28,6 +28,7 @@ flaggedPosts = [] #flagged posts are stored in here
 username = "default"
 choice = 1
 anythingFound = True
+userScore = 0
 
 #flask code
 

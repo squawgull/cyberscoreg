@@ -27,7 +27,7 @@ flaggedPosts = [] #flagged posts are stored in here
 username = "default"
 choice = 1
 anythingFound = True
-userScore = 0
+#userScore = 0
 
 #flask code
 
@@ -64,12 +64,12 @@ def next():
 def clause():
     if request.method == "POST":
         username = request.form.get("uname")
-        main(username)
+        new = main(username)
         return render_template('clause.html')
 
 @app.route('/proceed') #displays results
 def proceed():
-        return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts)
+        return render_template('proceed.html', score = new, len = len(flaggedPosts), flaggedPosts = flaggedPosts)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
@@ -238,3 +238,5 @@ def main(inp):
     print(termsFound)
     
     clean()
+    
+    return userScore

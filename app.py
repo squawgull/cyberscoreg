@@ -45,11 +45,13 @@ def select():
 
 @app.route('/login', methods=['GET', 'POST']) #gets login
 def login():
+    global choice
     choice = 1
     return render_template("login.html")
 
 @app.route('/promptText', methods=['GET', 'POST']) #get text input
 def getText():
+    global choice
     choice = 2
     return render_template('getText.html')
 
@@ -114,6 +116,7 @@ def getData():
     f.close()
 
 def openDoc(choice): #open the correct set of terms
+    global choice
     if choice == 1:
         f = open("profanities.txt", "r").read().split('\n')
     if choice == 2:

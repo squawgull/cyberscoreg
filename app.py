@@ -27,7 +27,7 @@ flaggedPosts = [] #flagged posts are stored in here
 username = "default"
 choice = 1
 anythingFound = True
-userScore = 0
+#userScore = 0
 
 #flask code
 
@@ -228,7 +228,7 @@ def main(inp):
     processedData = tokeniseIt(processedData)
 
     bowRep = bowUse(processedData)
-    userScore = calculate(bowRep)
+    global userScore = calculate(bowRep)
     locate(processedData)
     
     display()

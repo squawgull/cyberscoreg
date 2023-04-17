@@ -107,7 +107,7 @@ def remove():
     flaggedPosts = []
     username = "default"
     choice = 1
-    anythingFound = False
+    anythingFound = True
     userScore = 0
     final = False
     allTweets = []

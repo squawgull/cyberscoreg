@@ -78,7 +78,7 @@ def clause():
 
 @app.route('/proceed') #displays results
 def proceed():
-    return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts)
+    return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts), shut()
  
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
@@ -86,7 +86,7 @@ if __name__ == '__main__':
 #procedures needed
 
 def shut():
-    time.sleep(1)
+    time.sleep(3)
     print("Shutting down")
     sys.exit()
 
@@ -247,8 +247,6 @@ def main(inp):
     locate(processedData)
     
     display()
-    
-    #print
     
     print(terms)
     

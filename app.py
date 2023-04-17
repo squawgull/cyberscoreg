@@ -152,8 +152,10 @@ def getData():
 def openDoc(choice): #open the correct set of terms
     global terms
     if choice == 1:
+        print(choice)
         f = open("profanities.txt", "r").read().split('\n')
     if choice == 2:
+        print(choice)
         f = open("userChoice.txt", "r").read().split('\n')
     for i in f:
         terms.append(i)

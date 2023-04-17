@@ -78,7 +78,7 @@ def clause():
 
 @app.route('/proceed') #displays results
 def proceed():
-    print(score)
+    print(userScore)
     print(flaggedPosts)
     return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts)
 

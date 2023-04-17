@@ -124,6 +124,8 @@ def scrape(username):
     os.system(allCommand)
 
 def getData():
+    global textContent
+    global allTweets
     with open('posts.json') as f: #open json file linked to the username
         for line in f: #iterates through each json object at a time
             d = {
@@ -147,6 +149,7 @@ def getData():
     f.close()
 
 def openDoc(choice): #open the correct set of terms
+    global terms
     if choice == 1:
         f = open("profanities.txt", "r").read().split('\n')
     if choice == 2:
@@ -214,6 +217,7 @@ def bowUse(posts): #bag of words representation of the document
     return bow
 
 def calculate(model): #spits out a score based on how many profanities found
+    global termsFound
     score = 0
     for key in model: #needs to iterate through bow
         if (key in terms) and (model[key] == 1): #if that item is in terms then...
@@ -242,6 +246,7 @@ def locate(posts): #find the posts with the offensive terms
         anythingFound = False
         
 def display(): #get the relevant fields of the flagged posts
+    global flaggedPosts
     count = len(locations)
     if anythingFound == True:
         for i in range(count):
@@ -252,6 +257,7 @@ def display(): #get the relevant fields of the flagged posts
         flaggedPosts.append('No terms found')
 
 def clean():
+    global choice
     os.system("rm posts.json")
     if choice == 2:
         os.system("rm userChoice.txt")
@@ -259,7 +265,6 @@ def clean():
 def main(inp):
     scrape(inp)
     getData()
-    print(allTweets)
     openDoc(choice)
     processedData = removeLinks(textContent)
     processedData = removePuncLower(processedData)

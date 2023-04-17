@@ -80,8 +80,8 @@ def clause():
 def proceed():
     return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts)
 
-@app.route('/finish')
-def finish():
+@app.route('/exit')
+def exit():
     del username
     del choice
     del anythingFound

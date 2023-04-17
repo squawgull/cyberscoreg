@@ -93,17 +93,17 @@ def exit():
     global termsFound
     global terms
     global flaggedPosts
-    del flaggedPosts
-    del username
-    del choice
-    del anythingFound
-    del userScore
-    del final
-    del allTweets
-    del textContent
-    del locations
-    del termsFound
-    del terms
+    flaggedPosts = None
+    username = None
+    choice = None
+    anythingFound = None
+    userScore = None
+    final = None
+    allTweets = None
+    textContent = None
+    locations = None
+    termsFound = None
+    terms = None
     return render_template('home.html')
  
 if __name__ == '__main__':

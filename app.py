@@ -78,7 +78,12 @@ def clause():
 
 @app.route('/proceed') #displays results
 def proceed():
-    return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts), shut()
+    return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts)
+
+@app.route('/finish')
+def finish():
+    shut()
+    
  
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

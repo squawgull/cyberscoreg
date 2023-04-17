@@ -287,5 +287,5 @@ def main(inp):
     locate(processedData)
     
     display()
-    print(flaggedTweets)
+    print(flaggedPosts)
     clean()

@@ -16,8 +16,14 @@
 		
 			<li>{{flaggedPosts[i]['rawContent']}}</li>
 			<li>{{flaggedPosts[i]['url']}}</li>
+			<br>
 			
 		{% endfor %}
 		</ul>
+	<br>
+	<ul>
+        	<li><a href="{{ url_for('exit') }}">Exit</a></li>
+        </ul>
+	    
     </body>
 </html>

@@ -81,7 +81,7 @@ def clause():
 def proceed():
     print(userScore)
     print(flaggedPosts)
-    return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts)
+    return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts), remove()
 
 @app.route('/exit')
 def exit():

@@ -94,11 +94,11 @@ def exit():
     global terms
     global flaggedPosts
     flaggedPosts = []
-    username = None
-    choice = None
-    anythingFound = None
-    userScore = None
-    final = None
+    username = "default"
+    choice = 1
+    anythingFound = False
+    userScore = 0
+    final = False
     allTweets = []
     textContent = []
     locations = []

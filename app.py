@@ -62,7 +62,6 @@ def next():
     if request.method == "POST":
         text = request.form.get("textInput")
         spr = text.split()
-        print(spr)
         f = open("userChoice.txt", "w")
         for a in spr:
             f.write(a + "\n")
@@ -274,7 +273,4 @@ def main(inp):
     locate(processedData)
     
     display()
-    
-    print(terms)
-    
     clean()

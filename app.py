@@ -82,6 +82,17 @@ def proceed():
 
 @app.route('/finish')
 def finish():
+    del username
+    del choice
+    del anythingFound
+    del userScore
+    del final
+    del allTweets
+    del textContent
+    del locations
+    del termsFound
+    del terms
+    del flaggedPosts
     shut()
     
  

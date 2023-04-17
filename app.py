@@ -235,6 +235,7 @@ def calculate(model): #spits out a score based on how many profanities found
 def locate(posts): #find the posts with the offensive terms
     global anythingFound
     global termsFound
+    global locations
     count = 0
     if termsFound: #if array has elements should proceed
         for s in posts:
@@ -251,6 +252,8 @@ def locate(posts): #find the posts with the offensive terms
 def display(): #get the relevant fields of the flagged posts
     global flaggedPosts
     global anythingFound
+    global locations
+    global allTweets
     count = len(locations)
     if anythingFound == True:
         for i in range(count):
@@ -269,7 +272,6 @@ def clean():
 def main(inp):
     scrape(inp)
     getData()
-    print(allTweets)
     openDoc(choice)
     processedData = removeLinks(textContent)
     processedData = removePuncLower(processedData)
@@ -285,4 +287,5 @@ def main(inp):
     locate(processedData)
     
     display()
+    print(flaggedTweets)
     clean()

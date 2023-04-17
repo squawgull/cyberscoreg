@@ -259,6 +259,7 @@ def clean():
 def main(inp):
     scrape(inp)
     getData()
+    print(allTweets)
     openDoc(choice)
     processedData = removeLinks(textContent)
     processedData = removePuncLower(processedData)

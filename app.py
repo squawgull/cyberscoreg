@@ -234,6 +234,7 @@ def calculate(model): #spits out a score based on how many profanities found
 
 def locate(posts): #find the posts with the offensive terms
     global anythingFound
+    global termsFound
     count = 0
     if termsFound: #if array has elements should proceed
         for s in posts:

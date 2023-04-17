@@ -259,7 +259,6 @@ def display(): #get the relevant fields of the flagged posts
             flaggedPosts.append(y)
     else:
         flaggedPosts.append('No terms found')
-    print(flaggedPosts)
 
 def clean():
     global choice

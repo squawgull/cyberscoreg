@@ -144,7 +144,6 @@ def getData():
 
             #gets essential data from each json object/tweet
             current = data['rawContent']
-            #print(d)
             textContent.append(current)#adds data to list to be referred to later      
             allTweets.append(d)
     f.close()
@@ -165,7 +164,6 @@ def removeLinks(posts): #remove links from a post
     for s in posts:
         x = re.sub(r'(https|http)?:\/\/(\w|\.|\/|\?|\=|\&|\%)*\b', " ", s).split()
         x= ' '.join(x)
-        #print(x)
         newPosts.append(x)
     return newPosts
 
@@ -173,7 +171,6 @@ def removeEmoji(posts): #remove emojis from a post
     newPosts = []
     for s in posts:
         x = s.encode('ascii', 'ignore').decode('ascii')
-        #print(x)
         newPosts.append(x)
     return newPosts
 
@@ -181,7 +178,6 @@ def removeNumbers(posts): #remove numbers from a post
     newPosts = []
     for s in posts:
         x = re.sub(r'[0-9]+', '', s)
-        #print(x)
         newPosts.append(x)
     return newPosts
 
@@ -189,7 +185,6 @@ def removePuncLower(posts): #removes punctuation and lowers all characters
     newPosts = []
     for s in posts:
         x = s.lower().translate(str.maketrans('', '', string.punctuation))
-        #print(x)
         newPosts.append(x)
     return newPosts
 
@@ -197,7 +192,6 @@ def removeStop(posts): #removes stop words
     newPosts = []
     for s in posts:
         x = ' '.join([word for word in s.split() if word not in stop])
-        #print(x)
         newPosts.append(x)
     return newPosts
 
@@ -248,7 +242,7 @@ def locate(posts): #find the posts with the offensive terms
                     break
             count += 1 #index variable
     else: #if array is empty then should proceed here
-        print("No terms found")
+        print("No flagged posts found")
         anythingFound = False
         
 def display(): #get the relevant fields of the flagged posts
@@ -285,9 +279,7 @@ def main(inp):
     bowRep = bowUse(processedData)
     global userScore
     userScore = calculate(bowRep)
-    print(userScore)
     locate(processedData)
     
     display()
-    print(flaggedPosts)
     clean()

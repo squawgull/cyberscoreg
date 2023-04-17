@@ -78,11 +78,21 @@ def clause():
 
 @app.route('/proceed') #displays results
 def proceed():
+    print(score)
     print(flaggedPosts)
     return render_template('proceed.html', score = userScore, len = len(flaggedPosts), flaggedPosts = flaggedPosts)
 
 @app.route('/exit')
 def exit():
+    remove()
+    return render_template('home.html')
+ 
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
+#BOW and NLP code
+
+def remove():
     global username
     global choice
     global anythingFound
@@ -105,26 +115,20 @@ def exit():
     locations = []
     termsFound = []
     terms = []
-    return render_template('home.html')
- 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
 
-#procedures needed
-
-def shut():
+def shut(): #to terminate the program
     time.sleep(3)
     print("Shutting down")
     sys.exit()
 
-def scrape(username):
+def scrape(username): #use scraping API to retrieve tweets
     command1 = "snscrape --jsonl --max-results 1000 twitter-search 'from:"
     command2 = "'> posts.json"
     allCommand = command1 + username + command2
     print(allCommand)
     os.system(allCommand)
 
-def getData():
+def getData(): #get the necessary fields for the posts from the json file
     global textContent
     global allTweets
     with open('posts.json') as f: #open json file linked to the username
@@ -259,13 +263,13 @@ def display(): #get the relevant fields of the flagged posts
     else:
         flaggedPosts.append('No terms found')
 
-def clean():
+def clean(): #remove posts that have been processed
     global choice
     os.system("rm posts.json")
     if choice == 2:
         os.system("rm userChoice.txt")
 
-def main(inp):
+def main(inp): #where all data is proceeded
     scrape(inp)
     getData()
     openDoc(choice)

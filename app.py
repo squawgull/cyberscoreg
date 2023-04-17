@@ -82,6 +82,18 @@ def proceed():
 
 @app.route('/exit')
 def exit():
+    global username
+    global choice
+    global anythingFound
+    global userScore
+    global final
+    global allTweets
+    global textContent
+    global locations
+    global termsFound
+    global terms
+    global flaggedPosts
+    del flaggedPosts
     del username
     del choice
     del anythingFound
@@ -92,7 +104,6 @@ def exit():
     del locations
     del termsFound
     del terms
-    del flaggedPosts
     shut()
     
  

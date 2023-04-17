@@ -37,6 +37,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])#home page
 def first():
+    remove()
     return render_template('home.html')
 
 @app.route('/select', methods=['GET', 'POST']) #pick which type of check

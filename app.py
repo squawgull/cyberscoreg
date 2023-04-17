@@ -70,6 +70,7 @@ def next():
 
 @app.route('/clause', methods=['GET', 'POST']) #displays consent clause
 def clause():
+    global username
     if request.method == "POST":
         username = request.form.get("uname")
         main(username)
@@ -232,6 +233,7 @@ def calculate(model): #spits out a score based on how many profanities found
     return score
 
 def locate(posts): #find the posts with the offensive terms
+    global anythingFound
     count = 0
     if termsFound: #if array has elements should proceed
         for s in posts:
@@ -247,6 +249,7 @@ def locate(posts): #find the posts with the offensive terms
         
 def display(): #get the relevant fields of the flagged posts
     global flaggedPosts
+    global anythingFound
     count = len(locations)
     if anythingFound == True:
         for i in range(count):
